@@ -14,7 +14,7 @@ public extension Hakuba {
         return self
     }
     
-    func registerCellsByNib<T>(_ cellTypes: T.Type...) -> Self where T: Cell, T: CellType {
+    @discardableResult func registerCellsByNib<T>(_ cellTypes: T.Type...) -> Self where T: Cell, T: CellType {
         for cellType in cellTypes {
             registerCellByNib(cellType)
         }
@@ -26,7 +26,7 @@ public extension Hakuba {
         return self
     }
     
-    func registerCells<T: Cell>(_ cellTypes: T.Type...) -> Self {
+    @discardableResult func registerCells<T: Cell>(_ cellTypes: T.Type...) -> Self {
         for cellType in cellTypes {
             registerCell(cellType)
         }
@@ -38,7 +38,7 @@ public extension Hakuba {
         return self
     }
     
-    func registerHeaderFooter<T>(_ t: T.Type) -> Self where T: HeaderFooterView, T: HeaderFooterViewType {
+    @discardableResult func registerHeaderFooter<T>(_ t: T.Type) -> Self where T: HeaderFooterView, T: HeaderFooterViewType {
         tableView?.registerHeaderFooter(t)
         return self
     }
