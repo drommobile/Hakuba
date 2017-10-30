@@ -50,7 +50,7 @@ open class CellModel {
         self.selectionHandler = selectionHandler
     }
     
-    open func bump(_ animation: Animation = .none) -> Self {
+    @discardableResult open func bump(_ animation: Animation = .none) -> Self {
         calculatedHeight = nil
         delegate?.bumpMe(ItemBumpType.reload(indexPath), animation: animation)
         return self
